@@ -10,8 +10,8 @@ public void show() {
 circle(200,300,SIZE);
 }
 public void collides(MouseTracker m) { //<>//
- if (dist(this.pos.x,this.pos.y,mouseX,mouseY) < this.SIZE/2 && mousePressed){
-   Counter.total++;
+ if (dist(this.pos.x,this.pos.y,mouseX,mouseY) < this.SIZE/2){
+   counter.total++;
  }
 }
 }
