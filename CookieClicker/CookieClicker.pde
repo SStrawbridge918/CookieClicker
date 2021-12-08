@@ -4,13 +4,15 @@ MouseTracker m;
 Upgrades upgrade;
 CpsCounter cpsCounter;
 Upgrades upgrade1;
+Upgrades upgrade2;
 
 public void setup() {
   size (800,1000);
   counter = new Counter(200,100, 0);
   upgrade = new Upgrades(550,50,"upgrade","", 0);
   cpsCounter = new CpsCounter(200,100, 0);
-  upgrade1 = new Upgrades(630,75,"GrandmaBaker", "+3 CPS", 3);
+  upgrade1 = new Upgrades(480,20,"GrandmaBaker", "+3 CPS", 3);
+  upgrade2 = new Upgrades(480, 130, "Farm", "+30 CPS", 30);
   
   
 }
@@ -20,7 +22,8 @@ public void draw() {
   cookie = new Cookie(200,300);
   cookie.show();
   counter.show();
-  upgrade.show();
+  upgrade1.show();
+  upgrade2.show();
   cpsCounter.show();
   counter.adding();
 }
