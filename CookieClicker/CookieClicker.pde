@@ -9,10 +9,10 @@ Upgrades upgrade2;
 public void setup() {
   size (800,1000);
   counter = new Counter(200,100, 0);
-  upgrade = new Upgrades(550,50,"upgrade","", 0);
+  upgrade = new Upgrades(550,50,"upgrade","", 0, 0);
   cpsCounter = new CpsCounter(200,100, 0);
-  upgrade1 = new Upgrades(480,20,"GrandmaBaker", "+3 CPS", 3);
-  upgrade2 = new Upgrades(480, 130, "Farm", "+30 CPS", 30);
+  upgrade1 = new Upgrades(480,20,"GrandmaBaker", "+3 CPS", 3, 25);
+  upgrade2 = new Upgrades(480, 130, "Farm", "+30 CPS", 30, 250);
   
   
 }
@@ -30,4 +30,5 @@ public void draw() {
 void mouseClicked() {
  cookie.collides(m);
  upgrade1.collides(m);
+ upgrade2.collides(m);
 }

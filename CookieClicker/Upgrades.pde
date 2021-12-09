@@ -2,11 +2,15 @@ public class Upgrades{
   private PVector pos;
   public String name;
   public String cpsBoost;
+  public int price;
   
-   public Upgrades(int x, int y, String name, String cpsBoost, int Cps) {
+  
+  
+   public Upgrades(int x, int y, String name, String cpsBoost, int Cps, int price) {
    pos = new PVector(x,y);
    this.name = name;
    this.cpsBoost = cpsBoost;
+   this.price = price;
 }
 public void show() {
   fill(210);
@@ -15,30 +19,30 @@ public void show() {
  fill(255);
  textAlign(CENTER,CENTER);
  textSize(25);
- text(name, this.pos.x + 150 , this.pos.y + 30);
- text(cpsBoost, this.pos.x + 150, this.pos.y + 50); //<>//
+ text(name, this.pos.x + 180 , this.pos.y + 30);
+ text(cpsBoost, this.pos.x + 180, this.pos.y + 50); //<>//
+ textSize(40);
+ text(price, this.pos.x + 30, this. pos.y + 50);
  
  
 }
 
 public void collides(MouseTracker m){
  //grandma baker
- int price1 = 25;
-  if (counter.total >= price1){
+  if (counter.total >= this.price){
  if((mouseX > 480 && mouseX <770) && (mouseY > 20 && mouseY <120)) {
    cpsCounter.cps += 3;
-   counter.total -= price1;
-   price1 = price1 + (int)(price1 * 0.1);
-   System.out.print(price1);
+   counter.total -= this.price;
+   this.price = (int)(this.price * 1.1);
+   System.out.print(this.price);
  }
  //farm
- int price2 = 250;
- if (counter.total >= price2) {
+ if (counter.total >= this.price) {
  if((mouseX > 480 && mouseX <770) && (mouseY > 130 && mouseY <230)) {
    cpsCounter.cps += 30;
-   counter.total -= price2;
-   price2 = price2 +(int)(price2 * 0.1);
-   System.out.print(price2);
+   counter.total -= this.price;
+   this.price = (int)(this.price * 0.1);
+   System.out.print(this.price);
  }
  }
 }
