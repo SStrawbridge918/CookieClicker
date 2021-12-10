@@ -21,8 +21,9 @@ public void show() {
  textSize(25);
  text(name, this.pos.x + 180 , this.pos.y + 30);
  text(cpsBoost, this.pos.x + 180, this.pos.y + 50); //<>//
+ textAlign(0, CENTER);
  textSize(40);
- text(price, this.pos.x + 30, this. pos.y + 50);
+ text(price, this.pos.x + 10, this. pos.y + 50);
  
  
 }
@@ -33,18 +34,28 @@ public void collides(MouseTracker m){
  if((mouseX > 480 && mouseX <770) && (mouseY > 20 && mouseY <120)) {
    cpsCounter.cps += 3;
    counter.total -= upgrade1.price;
-   upgrade1.price = (int)(upgrade1.price * 1.1);
+   upgrade1.price = (int)(upgrade1.price * 1.2);
    System.out.print(upgrade1.price);
  }
+  }
+
  //farm
  if (counter.total >= upgrade2.price) {
  if((mouseX > 480 && mouseX <770) && (mouseY > 130 && mouseY <230)) {
    cpsCounter.cps += 30;
    counter.total -= upgrade2.price;
-   upgrade2.price = (int)(upgrade2.price * 1.1);
+   upgrade2.price = (int)(upgrade2.price * 1.2);
    System.out.print(upgrade2.price);
  }
  }
+ //Wizard Tower
+ if (counter.total >= upgrade3.price) {
+ if((mouseX > 480 && mouseX <770) && (mouseY > 240 && mouseY <340)) {
+   cpsCounter.cps += 250;
+   counter.total -= upgrade3.price;
+   upgrade3.price = (int)(upgrade3.price * 1.2);
+   System.out.print(upgrade3.price);
+}
 }
 }
 }
