@@ -6,9 +6,11 @@ CpsCounter cpsCounter;
 Upgrades upgrade1;
 Upgrades upgrade2;
 Upgrades upgrade3;
+PImage img;
 
 public void setup() {
   size (800,1000);
+  img = loadImage("Cookie2.png");
   counter = new Counter(200,100, 0);
   upgrade = new Upgrades(550,50,"upgrade","", 0, 0);
   cpsCounter = new CpsCounter(200,100, 0);
@@ -23,6 +25,7 @@ public void draw() {
   background (0,150,225);
   cookie = new Cookie(200,300);
   cookie.show();
+  image(img,51,151,298,298);
   counter.show();
   upgrade1.show();
   upgrade2.show();
